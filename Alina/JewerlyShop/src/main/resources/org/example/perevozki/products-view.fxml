@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<?import javafx.scene.control.Button?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.perevozki.controllers.ProductsWindowController">
+   <children>
+      <BorderPane layoutX="225.0" layoutY="117.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <HBox prefHeight="29.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <MenuBar>
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Навигация">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#MenuItemOrders" text="Заказы"/>
+                          </items>
+                        </Menu>
+                    </menus>
+                  </MenuBar>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <top>
+                  <FlowPane prefHeight="23.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <TextField fx:id="TFSearch" onAction="#TFSearchAction" promptText="Поиск">
+                           <FlowPane.margin>
+                              <Insets />
+                           </FlowPane.margin>
+                        </TextField>
+                         <ComboBox fx:id="CBSort" onAction="#CBSortAction" prefWidth="125.0" promptText="Сортировка" />
+                         <ComboBox fx:id="CBFilter" onAction="#CBFilterAction" prefWidth="125.0" promptText="Фильтрация" />
+                         <Button fx:id="BtnOrder" onAction="#BtnCreateOrderAction" prefWidth="100.0" text="Заказать" />
+                     </children>
+                  </FlowPane>
+               </top>
+               <center>
+                  <ListView fx:id="ListViewProducts" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+               </center>
+               <bottom>
+                  <Label fx:id="labelCurrentCount" text="Кол-во записей" BorderPane.alignment="BOTTOM_LEFT" />
+               </bottom>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
